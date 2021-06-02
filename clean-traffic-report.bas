@@ -1,10 +1,10 @@
 Attribute VB_Name = "Module1"
 Sub Everything_ASPNET()
     Call EverythingCommonToAll
-    Call MakeHyperLinkColumn
     Call RemoveText_ASPNET
     Call ShortenLongColumns_ASPNET
     Call HideColumns_ASPNET
+    Call MakeHyperLinkColumn_ASPNET
 End Sub
 
 Sub EveryThing_DOTNET()
@@ -14,24 +14,24 @@ Sub EveryThing_DOTNET()
     Call HideColumns_DOTNET
 End Sub
 
-Sub MakeHyperLinkColumn()
-    Call MakeHyperLinks
-    Call HyperLinkColumnName
+Sub MakeHyperLinkColumn_ASPNET()
+    Call MakeHyperLinks_ASPNET
+    Call HyperLinkColumnName_ASPNET
 End Sub
 
-Sub HyperLinkColumnName()
-    Range("Table1[[#Headers],[Column1]]").Select
-    ActiveCell.FormulaR1C1 = "Link"
-    Range("AP2").Select
-End Sub
-    
-Sub MakeHyperLinks()
+Sub MakeHyperLinks_ASPNET()
     Range("AP2").Select
     Application.CutCopyMode = False
     ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
     Range("AP3").Select
 End Sub
 
+Sub HyperLinkColumnName_ASPNET()
+    Range("Table1[[#Headers],[Column1]]").Select
+    ActiveCell.FormulaR1C1 = "Link"
+    Range("AP2").Select
+End Sub
+    
 Sub EverythingCommonToAll()
     Call DeleteTop2RowsIf
     Call PinTopRow
