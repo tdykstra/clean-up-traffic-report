@@ -16,16 +16,16 @@ Sub AllAspNetCore_ASPNET()
 End Sub
 
 Sub MakeHyperLinkColumn()
-    Call HyperLinkColumnName
     Call MakeHyperLinks
+    Call HyperLinkColumnName
 End Sub
 
 Sub HyperLinkColumnName()
-    Range("AQ1").Select
+    Range("Table1[[#Headers],[Column1]]").Select
     ActiveCell.FormulaR1C1 = "Link"
-    Range("AQ2").Select
+    Range("AP2").Select
 End Sub
-
+    
 Sub MakeHyperLinks()
     Range("AP2").Select
     Application.CutCopyMode = False
