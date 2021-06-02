@@ -99,7 +99,7 @@ End Sub
 
 Sub HideColumns_ASPNET()
 Columns("A").Hidden = True ' Topic type
-'Columns("C").Hidden = True ' Live URL
+Columns("C").Hidden = True ' Live URL
 Columns("G").Hidden = True ' Search referrals
 Columns("H:K").Hidden = True 'KPI rank, KPI rank change, CTR, CopyTryScroll
 Columns("N:W").Hidden = True ' Organic search through Dwell rate
