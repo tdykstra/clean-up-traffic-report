@@ -1,18 +1,17 @@
 Attribute VB_Name = "Module1"
-Sub EveryThing_ASPNET()
-    Call DeleteTop2RowsIf
-    Call HideColumns
-    Call RenameTitleText
-    Call PinTopRow
-    Call RenameMoreColms
-    Call WidenColum
+Sub Everything_ASPNET()
+    Call EverythingCommonToAll
     Call MakeHyperLinkColumn
-    Call AllAspNetCore_ASPNET
-End Sub
-
-Sub AllAspNetCore_ASPNET()
     Call RemoveText_ASPNET
     Call ShortenLongColumns_ASPNET
+    Call HideColumns_ASPNET
+End Sub
+
+Sub EveryThing_DOTNET()
+    Call EverythingCommonToAll
+    Call RemoveText_DOTNET
+    Call ShortenLongColumns_DOTNET
+    Call HideColumns_DOTNET
 End Sub
 
 Sub MakeHyperLinkColumn()
@@ -33,9 +32,12 @@ Sub MakeHyperLinks()
     Range("AP3").Select
 End Sub
 
-Sub DeleteHide()
+Sub EverythingCommonToAll()
     Call DeleteTop2RowsIf
-    Call HideColumns
+    Call PinTopRow
+    Call RemoveSumOf
+    Call ShortenLongColumnNames
+    Call WidenColumns
 End Sub
 
 Sub DeleteTop2RowsIf()
@@ -49,53 +51,6 @@ Sub DeleteTop2RowsIf()
        Selection.Delete Shift:=xlUp
     End If
     
-End Sub
-
-Sub HideColumns()
-Columns("A").Hidden = True ' Topic type
-Columns("C").Hidden = True ' Live URL
-Columns("G").Hidden = True ' Search referrals
-Columns("H:K").Hidden = True 'KPI rank, KPI rank change, CTR, CopyTryScroll
-Columns("N:W").Hidden = True ' Organic search through Dwell rate
-Columns("Y:AO").Hidden = True ' CSAT response rate through end
-End Sub
-
-Sub RemoveText_ASPNET()
-' Remove "in ASP.NET Core"
-    Range("Table1[[#Headers],[Title]]").Select
-    Cells.Replace What:=" in ASP.NET Core", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-End Sub
-Sub RenameTitleText()
-' Remove "Sum of" from heading cells.
-    Rows("1:1").Select
-    Range("Table1[[#Headers],[Title]]").Activate
-    Selection.Replace What:="Sum of ", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-End Sub
-
-Sub RenameMoreColms()
-' Shorten long column header text
-    Rows("1:1").Select
-    Range("Table1[[#Headers],[Title]]").Activate
-    Selection.Replace What:="BounceRate", Replacement:="Bounce", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-        
-       Rows("1:1").Select
-    Range("Table1[[#Headers],[Title]]").Activate
-    Selection.Replace What:="CSATHelpfulRate", Replacement:="CSAT", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
-End Sub
-
-Sub ShortenLongColumns_ASPNET()
-    Range("Table1[[#Headers],[Title]]").Select
-    Cells.Replace What:="Secure an ASP.NET Core", Replacement:="", LookAt:=xlPart, _
-        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
-        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
 End Sub
 
 Sub PinTopRow()
@@ -113,9 +68,74 @@ ActiveWindow.FreezePanes = True
 
 End Sub
 
-Sub WidenColum()
+Sub RemoveSumOf()
+    Rows("1:1").Select
+    Range("Table1[[#Headers],[Title]]").Activate
+    Selection.Replace What:="Sum of ", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+End Sub
+
+Sub ShortenLongColumnNames()
+    Rows("1:1").Select
+    Range("Table1[[#Headers],[Title]]").Activate
+    Selection.Replace What:="BounceRate", Replacement:="Bounce", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+        
+       Rows("1:1").Select
+    Range("Table1[[#Headers],[Title]]").Activate
+    Selection.Replace What:="CSATHelpfulRate", Replacement:="CSAT", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+End Sub
+
+Sub WidenColumns()
      Columns("B:B").ColumnWidth = 50 ' Title
      Columns("D:F").EntireColumn.AutoFit ' Page views, PV MoM, Visitors
      Columns("L:M").EntireColumn.AutoFit ' Bounce rate, Exit rate
      Columns("X:X").EntireColumn.AutoFit ' CSAT rate
+End Sub
+
+Sub HideColumns_ASPNET()
+Columns("A").Hidden = True ' Topic type
+'Columns("C").Hidden = True ' Live URL
+Columns("G").Hidden = True ' Search referrals
+Columns("H:K").Hidden = True 'KPI rank, KPI rank change, CTR, CopyTryScroll
+Columns("N:W").Hidden = True ' Organic search through Dwell rate
+Columns("Y:AO").Hidden = True ' CSAT response rate through end
+End Sub
+
+Sub RemoveText_ASPNET()
+' Remove "in ASP.NET Core"
+    Range("Table1[[#Headers],[Title]]").Select
+    Cells.Replace What:=" in ASP.NET Core", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+End Sub
+
+Sub ShortenLongColumns_ASPNET()
+    Range("Table1[[#Headers],[Title]]").Select
+    Cells.Replace What:="Secure an ASP.NET Core", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+End Sub
+
+Sub HideColumns_DOTNET()
+'Columns("A").Hidden = True ' Topic type
+'Columns("C").Hidden = True ' Live URL
+Columns("E").Hidden = True ' PV MoM
+Columns("G").Hidden = True ' Search referrals
+Columns("N").Hidden = True ' Organic search
+Columns("N:W").Hidden = True ' Organic search through Dwell rate
+Columns("Y:Z").Hidden = True ' CSAT response rate, CSAT helpful responses
+Columns("AB:AO").Hidden = True ' CSAT rating verbatims through end
+End Sub
+
+Sub RemoveText_DOTNET()
+' Nothing to remove at this time.
+End Sub
+
+Sub ShortenLongColumns_DOTNET()
+' Nothing to shorten at this time.
 End Sub
