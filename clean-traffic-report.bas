@@ -6,12 +6,31 @@ Sub EveryThing_ASPNET()
     Call PinTopRow
     Call RenameMoreColms
     Call WidenColum
+    Call MakeHyperLinkColumn
     Call AllAspNetCore_ASPNET
 End Sub
 
 Sub AllAspNetCore_ASPNET()
     Call RemoveText_ASPNET
     Call ShortenLongColumns_ASPNET
+End Sub
+
+Sub MakeHyperLinkColumn()
+    Call HyperLinkColumnName
+    Call MakeHyperLinks
+End Sub
+
+Sub HyperLinkColumnName()
+    Range("AQ1").Select
+    ActiveCell.FormulaR1C1 = "Link"
+    Range("AQ2").Select
+End Sub
+
+Sub MakeHyperLinks()
+    Range("AP2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
+    Range("AP3").Select
 End Sub
 
 Sub DeleteHide()
@@ -21,14 +40,14 @@ End Sub
 
 Sub DeleteTop2RowsIf()
 
-Set rRng = Sheet1.Range("A2")
-' If row 2 is empty, remove the top two rows.
-' Row 1 shows the selected filters, row 2 is blank.
-If IsEmpty(rRng.Value) Then
-    Rows("1:1").Select
-    Selection.Delete Shift:=xlUp
-    Selection.Delete Shift:=xlUp
-End If
+    Set rRng = Sheet1.Range("A2")
+    ' If row 2 is empty, remove the top two rows.
+    ' Row 1 shows the selected filters, row 2 is blank.
+    If IsEmpty(rRng.Value) Then
+       Rows("1:1").Select
+       Selection.Delete Shift:=xlUp
+       Selection.Delete Shift:=xlUp
+    End If
     
 End Sub
 
@@ -93,7 +112,6 @@ ActiveWindow.SplitRow = 1
 ActiveWindow.FreezePanes = True
 
 End Sub
-
 
 Sub WidenColum()
      Columns("B:B").ColumnWidth = 50 ' Title
