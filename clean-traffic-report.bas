@@ -1,6 +1,7 @@
 Attribute VB_Name = "Module1"
 Sub Everything_ASPNET()
     Call EverythingCommonToAll
+    Call MakeHyperLinkColumn
     Call RemoveText_ASPNET
     Call ShortenLongColumns_ASPNET
     Call HideColumns_ASPNET
@@ -13,6 +14,24 @@ Sub EveryThing_DOTNET()
     Call HideColumns_DOTNET
 End Sub
 
+Sub MakeHyperLinkColumn()
+    Call MakeHyperLinks
+    Call HyperLinkColumnName
+End Sub
+
+Sub HyperLinkColumnName()
+    Range("Table1[[#Headers],[Column1]]").Select
+    ActiveCell.FormulaR1C1 = "Link"
+    Range("AP2").Select
+End Sub
+    
+Sub MakeHyperLinks()
+    Range("AP2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
+    Range("AP3").Select
+End Sub
+
 Sub EverythingCommonToAll()
     Call DeleteTop2RowsIf
     Call PinTopRow
@@ -23,14 +42,14 @@ End Sub
 
 Sub DeleteTop2RowsIf()
 
-Set rRng = Sheet1.Range("A2")
-' If row 2 is empty, remove the top two rows.
-' Row 1 shows the selected filters, row 2 is blank.
-If IsEmpty(rRng.Value) Then
-    Rows("1:1").Select
-    Selection.Delete Shift:=xlUp
-    Selection.Delete Shift:=xlUp
-End If
+    Set rRng = Sheet1.Range("A2")
+    ' If row 2 is empty, remove the top two rows.
+    ' Row 1 shows the selected filters, row 2 is blank.
+    If IsEmpty(rRng.Value) Then
+       Rows("1:1").Select
+       Selection.Delete Shift:=xlUp
+       Selection.Delete Shift:=xlUp
+    End If
     
 End Sub
 
