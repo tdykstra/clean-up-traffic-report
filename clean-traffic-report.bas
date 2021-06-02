@@ -2,16 +2,16 @@ Attribute VB_Name = "Module1"
 Sub EveryThing_ASPNET()
     Call DeleteTop2RowsIf
     Call HideColumns
-    Call RemoveText_ASPNET
-    Call DeleteTop2RowsIf
     Call RenameTitleText
-    Call DeleteTop2RowsIf
-    Call ShortenLongColumns_ASPNET
     Call PinTopRow
     Call RenameMoreColms
     Call WidenColum
-    Call WidenColum
-    'Call Macro999
+    Call AllAspNetCore_ASPNET
+End Sub
+
+Sub AllAspNetCore_ASPNET()
+    Call RemoveText_ASPNET
+    Call ShortenLongColumns_ASPNET
 End Sub
 
 Sub DeleteHide()
