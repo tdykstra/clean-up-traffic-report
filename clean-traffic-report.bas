@@ -4,7 +4,6 @@ Sub Everything_ASPNET()
     Call RemoveText_ASPNET
     Call ShortenLongColumns_ASPNET
     Call HideColumns_ASPNET
-    Call MakeHyperLinkColumn_ASPNET
 End Sub
 
 Sub EveryThing_DOTNET()
@@ -14,19 +13,19 @@ Sub EveryThing_DOTNET()
     Call HideColumns_DOTNET
 End Sub
 
-Sub MakeHyperLinkColumn_ASPNET()
-    Call MakeHyperLinks_ASPNET
-    Call HyperLinkColumnName_ASPNET
+Sub MakeHyperLinkColumn()
+    Call MakeHyperLinks
+    Call HyperLinkColumnName
 End Sub
 
-Sub MakeHyperLinks_ASPNET()
+Sub MakeHyperLinks()
     Range("AP2").Select
     Application.CutCopyMode = False
     ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
     Range("AP3").Select
 End Sub
 
-Sub HyperLinkColumnName_ASPNET()
+Sub HyperLinkColumnName()
     Range("Table1[[#Headers],[Column1]]").Select
     ActiveCell.FormulaR1C1 = "Link"
     Range("AP2").Select
@@ -38,6 +37,7 @@ Sub EverythingCommonToAll()
     Call RemoveSumOf
     Call ShortenLongColumnNames
     Call WidenColumns
+    Call MakeHyperLinkColumn
 End Sub
 
 Sub DeleteTop2RowsIf()
