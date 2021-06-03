@@ -13,24 +13,6 @@ Sub EveryThing_DOTNET()
     Call HideColumns_DOTNET
 End Sub
 
-Sub MakeHyperLinkColumn()
-    Call MakeHyperLinks
-    Call HyperLinkColumnName
-End Sub
-
-Sub MakeHyperLinks()
-    Range("AP2").Select
-    Application.CutCopyMode = False
-    ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
-    Range("AP3").Select
-End Sub
-
-Sub HyperLinkColumnName()
-    Range("Table1[[#Headers],[Column1]]").Select
-    ActiveCell.FormulaR1C1 = "Link"
-    Range("AP2").Select
-End Sub
-    
 Sub EverythingCommonToAll()
     Call DeleteTop2RowsIf
     Call PinTopRow
@@ -123,7 +105,7 @@ End Sub
 
 Sub HideColumns_DOTNET()
 'Columns("A").Hidden = True ' Topic type
-'Columns("C").Hidden = True ' Live URL
+Columns("C").Hidden = True ' Live URL
 Columns("E").Hidden = True ' PV MoM
 Columns("G").Hidden = True ' Search referrals
 Columns("N").Hidden = True ' Organic search
@@ -138,4 +120,22 @@ End Sub
 
 Sub ShortenLongColumns_DOTNET()
 ' Nothing to shorten at this time.
+End Sub
+
+Sub MakeHyperLinkColumn()
+    Call MakeHyperLinks
+    Call HyperLinkColumnName
+End Sub
+
+Sub MakeHyperLinks()
+    Range("AP2").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "=HYPERLINK([@LiveUrl])"
+    Range("AP3").Select
+End Sub
+
+Sub HyperLinkColumnName()
+    Range("Table1[[#Headers],[Column1]]").Select
+    ActiveCell.FormulaR1C1 = "Link"
+    Range("AP2").Select
 End Sub
