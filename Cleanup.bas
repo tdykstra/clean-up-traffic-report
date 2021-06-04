@@ -20,6 +20,7 @@ Sub EverythingCommonToAll()
     Call ShortenLongColumnNames
     Call WidenColumns
     Call MakeHyperLinkColumn
+    Call ScrollToBeginning
 End Sub
 
 Sub DeleteTop2RowsIf()
@@ -79,6 +80,11 @@ Sub WidenColumns()
      Columns("X:X").EntireColumn.AutoFit ' CSAT rate
 End Sub
 
+Sub ScrollToBeginning()
+    ActiveWindow.ScrollColumn = 2
+    ActiveWindow.ScrollRow = 1
+End Sub
+
 Sub HideColumns_ASPNET()
 Columns("A").Hidden = True ' Topic type
 Columns("C").Hidden = True ' Live URL
@@ -104,7 +110,7 @@ Sub ShortenLongColumns_ASPNET()
 End Sub
 
 Sub HideColumns_DOTNET()
-'Columns("A").Hidden = True ' Topic type
+Columns("A").Hidden = True ' Topic type
 Columns("C").Hidden = True ' Live URL
 Columns("E").Hidden = True ' PV MoM
 Columns("G").Hidden = True ' Search referrals
