@@ -26,7 +26,7 @@ To use the Cleanup VBA module, follow these steps:
 
   ![image](https://user-images.githubusercontent.com/3605364/120518419-44ea7600-c36d-11eb-9c46-9e3a72799d0a.png)
 
-* Select **File** > **Save As Excel Macro-Enabled Workbook (\*.xlsm)**.
+* If you want to be able to save the VBA code with the spreadsheet, select **File** > **Save As Excel Macro-Enabled Workbook (\*.xlsm)**. If you skip this step you can still save the cleaned-up spreadsheet as an *.xlsx* file without the VBA code.
 
 * [Show the **Developer** tab](https://support.microsoft.com/topic/show-the-developer-tab-e1192344-5e56-4d45-931b-e5fd9bea2d45)
 
