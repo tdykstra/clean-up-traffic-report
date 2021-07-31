@@ -1,4 +1,3 @@
-Attribute VB_Name = "Cleanup"
 Sub Everything_ASPNET()
     Call EverythingCommonToAll
     Call RemoveText_ASPNET
@@ -11,6 +10,12 @@ Sub EveryThing_DOTNET()
     Call RemoveText_DOTNET
     Call ShortenLongColumns_DOTNET
     Call HideColumns_DOTNET
+End Sub
+
+Sub Everything_EF()
+    Call EverythingCommonToAll
+    Call RemoveText_EF
+    Call HideColumns_ASPNET
 End Sub
 
 Sub EverythingCommonToAll()
@@ -98,6 +103,14 @@ Sub RemoveText_ASPNET()
 ' Remove "in ASP.NET Core"
     Range("Table1[[#Headers],[Title]]").Select
     Cells.Replace What:=" in ASP.NET Core", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+End Sub
+
+Sub RemoveText_EF()
+' Remove " - EF Core"
+    Range("Table1[[#Headers],[Title]]").Select
+    Cells.Replace What:=" - EF Core", Replacement:="", LookAt:=xlPart, _
         SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
         ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
 End Sub
