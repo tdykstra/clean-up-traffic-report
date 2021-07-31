@@ -29,15 +29,10 @@ To use the Cleanup VBA module, follow these steps:
 * If you want to be able to save the VBA code with the spreadsheet, select **File** > **Save As Excel Macro-Enabled Workbook (\*.xlsm)**. If you skip this step you can still save the cleaned-up spreadsheet as an *.xlsx* file without the VBA code.
 
 * [Show the **Developer** tab](https://support.microsoft.com/topic/show-the-developer-tab-e1192344-5e56-4d45-931b-e5fd9bea2d45)
-
 * Select **Developer** > **Visual Basic**.
-
 * Right click **VBAProject** > **Import File**.
-
 * Select the *Cleanup.bas* file  and then select **Open**.
-
 * Expand **Modules** and then double-click **Cleanup**.
-
 * Click somewhere in the `Sub EveryThing_ASPNET()` or the `Sub EveryThing_DOTNET()` line, and select the **Run** button.
 
   The repo currently has code customized for ASP.NET Core and .NET; to customize for your docset, create subroutines equivalent to the ones with _ASPNET or _DOTNET suffixes on the names. For example, create a set of _EFCORE subroutines.
