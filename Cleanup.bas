@@ -126,7 +126,7 @@ End Sub
 Sub HideColumns_DOTNET()
 Columns("A").Hidden = True ' Topic type
 Columns("C").Hidden = True ' Live URL
-Columns("E").Hidden = True ' PV MoM
+`Columns("E").Hidden = True ' PV MoM
 Columns("G").Hidden = True ' Search referrals
 Columns("N").Hidden = True ' Organic search
 Columns("N:W").Hidden = True ' Organic search through Dwell rate
