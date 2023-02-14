@@ -18,8 +18,8 @@ To use the Cleanup VBA module, follow these steps:
 
 * Find the ellipsis (`...`) and select **Export Data**. Hover around the area in the red circle until `...` appears.
 
-  ![image](https://user-images.githubusercontent.com/3605364/120519553-74e64900-c36e-11eb-9016-9ac35e4b6380.png)
-
+ <img width="275" alt="image" src="https://user-images.githubusercontent.com/3605364/218885221-690cba91-dfdb-4fca-bf9b-6f579f33e543.png">
+ 
 * Select the default **Summarized Data**.
 
 * Open the Excel file, and select **Enable Editing**.
