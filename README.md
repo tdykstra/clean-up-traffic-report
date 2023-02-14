@@ -12,7 +12,7 @@ To use the Cleanup VBA module, follow these steps:
 
 * CLone or download this repo to your local machine.
 
-* Run the [Content Performance report](https://aka.ms/contentperformancedashboard) and select the **Documentation** tab.
+* Run the [Content Engagement report](https://aka.ms/contentengagementreport) and select the **Documentation** tab.
 
   ![image](https://user-images.githubusercontent.com/3605364/120519165-0acda400-c36e-11eb-805f-bc431c8cf9b4.png)
 
