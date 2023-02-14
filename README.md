@@ -18,7 +18,7 @@ To use the Cleanup VBA module, follow these steps:
 
 * Find the ellipsis (`...`) and select **Export Data**. Hover around the area in the red circle until `...` appears.
 
- <img width="275" alt="image" src="https://user-images.githubusercontent.com/3605364/218885221-690cba91-dfdb-4fca-bf9b-6f579f33e543.png">
+<img width="311" alt="image" src="https://user-images.githubusercontent.com/3605364/218885808-ea477b4c-7206-4624-9e4a-b16885b3dee0.png">
  
 * Select the default **Summarized Data**.
 
