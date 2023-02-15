@@ -12,14 +12,14 @@ To use the Cleanup VBA module, follow these steps:
 
 * CLone or download this repo to your local machine.
 
-* Run the [Content Performance report](https://aka.ms/contentperformancedashboard) and select the **Documentation** tab.
+* Run the [Content Engagement report](https://aka.ms/contentengagementreport) and select the **Documentation** tab.
 
   ![image](https://user-images.githubusercontent.com/3605364/120519165-0acda400-c36e-11eb-805f-bc431c8cf9b4.png)
 
 * Find the ellipsis (`...`) and select **Export Data**. Hover around the area in the red circle until `...` appears.
 
-  ![image](https://user-images.githubusercontent.com/3605364/120519553-74e64900-c36e-11eb-9016-9ac35e4b6380.png)
-
+<img width="311" alt="image" src="https://user-images.githubusercontent.com/3605364/218885808-ea477b4c-7206-4624-9e4a-b16885b3dee0.png">
+ 
 * Select the default **Summarized Data**.
 
 * Open the Excel file, and select **Enable Editing**.
